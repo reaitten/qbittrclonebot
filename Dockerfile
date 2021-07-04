@@ -21,11 +21,9 @@ apt-get update && \
         python3 \
 	python3-pip && \
 	python3 -m pip install telegram python-telegram-bot --upgrade && \
- curl -s https://bintray.com/user/downloadSubjectPublicKey?username=fedarovich | apt-key add - && \
- apt-key adv --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 7CA69FC4 && \
- echo "deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
- echo "deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
- echo "deb https://dl.bintray.com/fedarovich/qbittorrent-cli-debian bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
+ apt-get install -y software-properties-common && \
+ apt-get -y update && \
+ add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable && \
  echo "**** install packages ****" && \
  if [ -z ${QBITTORRENT_VERSION+x} ]; then \
         QBITTORRENT_VERSION=$(curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c \
@@ -34,7 +32,7 @@ apt-get update && \
  apt-get update && \
  apt-get install -y \
         p7zip-full \
-        qbittorrent-cli \
+        qbittorrent \
         qbittorrent-nox=${QBITTORRENT_VERSION} \
         unrar \
         geoip-bin \
