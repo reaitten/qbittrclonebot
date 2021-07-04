@@ -14,9 +14,8 @@ try:
 	from telegram import (InlineQueryResultArticle, ParseMode, InputTextMessageContent, MessageEntity, InlineKeyboardButton, InlineKeyboardMarkup)
 	import telegram
 	import logging
-	from os import remove
 	import os
-	from os import scandir, getcwd, rename
+	from os import scandir, getcwd, rename, remove
 	import zipfile
 
 	# Enable logging
@@ -122,7 +121,7 @@ try:
 	def main():
 	    # Create the EventHandler and pass it your bot's token.
 
-		updater = Updater("TU TOKEN BOT")
+		updater = Updater("YOUR BOT TOKEN")
 		dp = updater.dispatcher
 
 		dp.add_handler(MessageHandler(Filters.document, descargar_archivos))
