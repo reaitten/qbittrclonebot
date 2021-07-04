@@ -2,13 +2,13 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/rclone/rclone)](https://hub.docker.com/r/guzmi/qbittrclonebot)
 
-Este contenedor de docker contiene el cliente qBittorrent, herramienta Rclone y un BOT extra en Python para telegram al cuál enviar los torrents y automáticamente se añadan al cliente qbittorrent, con la finalidad de automatizar la subida de nuestras descargas a los principales servidores cloud como gdrive etc.
+This docker container contains the qBittorrent client, Rclone tool and an extra BOT in Python for telegram to which to send the torrents and automatically add them to the qbittorrent client, in order to automate the upload of our downloads to the main cloud servers such as gdrive etc. .
 
-### Pre-requisitos 📋
-Únicamente necesitaremos tener docker instalado en nuestro sistema operativo.
+### Pre-requisites 📋
+We will only need to have docker installed on our operating system.
 
-## Despliegue 📦
-La forma más recomendades para lanzar este contenedor es la siguiente:
+## Deployment 📦
+The most recommended way to launch this container is the following:
 
 ```
 docker run \
@@ -27,8 +27,7 @@ docker run \
 -it guzmi/qbittrclonebot /bin/bash
 ```
 ## +info 📖
-La versión que contiene del cliente qBittorrent es la v4.2.1
-Para que el bot telgram pueda trabajar y debemos editar el archivo bot.py que se encuentra en la carpeta /config y añadir en lugar indicado el TOKEN ID de nuestro bot telegram, posteriormente a qBittorrent en configuración debemos configurarle como carpeta monitorizada /config/normales/
+The version that contains the qBittorrent client is v4.2.1
+So that the telgram bot can work and we must edit the bot.py file that is in the / config folder and add the TOKEN ID of our telegram bot in the indicated place, then to qBittorrent in configuration we must configure it as a monitored / config / normal folder /
 
-Es necesario que las carpetas a las cuáles apuntan los volúmenes tengan permisos de escritura y lectura de lo contrario rclone no podrá leer y escribir su fichero de configuración.
-
+It is necessary that the folders to which the volumes point have read and write permissions, otherwise rclone will not be able to read and write its configuration file.
