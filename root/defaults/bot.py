@@ -83,11 +83,11 @@ try:
 				zf.close()
 				#rename_files()
 				remove(tmp+filename)
-				bot.send_message(chat_id=m.chat.id, text="Se han guardado los archivos de <b>"+filename+"</b> en la carpeta", parse_mode="HTML")
+				bot.send_message(chat_id=m.chat.id, text="The files have been saved <b>"+filename+"</b> in the folder.", parse_mode="HTML")
 
 			if filename.endswith('.torrent'):
 				DownloadFile(archivo.file_path, ruta, filename)
-				bot.send_message(chat_id=m.chat.id, text="El archivo <b>"+filename+"</b> se ha añadido guardado en la carpeta", parse_mode="HTML")
+				bot.send_message(chat_id=m.chat.id, text="The file <b>"+filename+"</b> has been saved in the folder.", parse_mode="HTML")
 			if "magnet" in texto:
 				bot.send_message(chat_id=m.chat.id, text="Esto es un magnet tronco", parse_mode="HTML")
 		except Exception as e:
@@ -110,7 +110,7 @@ try:
 				f = open (ruta,'w')
 				f.write(texto)
 				f.close()
-				bot.send_message(chat_id=m.chat.id, text="Torrent añadidor por URL o Magnet Correctamente", parse_mode="HTML")
+				bot.send_message(chat_id=m.chat.id, text="Add torrent by URL or Magnet correctly", parse_mode="HTML")
 
 		except Exception as e:
 			print (e)
